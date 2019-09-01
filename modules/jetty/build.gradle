@@ -1,0 +1,5 @@
+group = 'com.walterjwhite.modules.web-service.modules'
+description = 'web-service - modules - jetty'
+dependencies {
+  compile project(':infrastructure:dependencies:jetty')
+}

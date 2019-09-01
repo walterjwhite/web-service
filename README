@@ -1,0 +1,47 @@
+Goals
+1. standardize means to communicate between processes / systems (web-service, rsocket, etc.)
+2. automatically / simplify translation
+   a. if we are making a call to XYZ, automatically handle the transformation to the wire format
+   b. write less "glue" code
+
+
+
+## Original / Dated Goals
+
+Phase 1:
+1. utilize Jersey rather than try to reinvent the wheel
+2. integrate Guice with Jersey
+3. prepare a web service with plain/text output
+4. prepare a web service with Jackon (JSON) output (use serialization service)
+5. prepare a web service with Kryo, compressed, and encrypted output
+6. prepare a web service with a file as a request / response parameter
+
+NOTES:
+1. what advantage do I really have by abstracting what I'm trying to abstract?
+   a. existing annotations are widely supported, easily understood
+   b. my approach will require me to support those
+      1. I could have more flexibility to change the serialization at runtime
+
+
+actions
+1. write sample web services
+2. configure serialization (YAML, JSON, XML, KRYO, NATIVE)
+3. configure compression (GZIP, LZ)
+4. configure encryption
+5. configure servlet container
+6. provide integration with jetty / tomcat
+
+goals
+1. provide a framework to quickly take any service and expose it as a web service
+   a. support jetty
+   b. support tomcat
+   c. support undertow
+
+examples
+1. email service -> send email (via javamail module)
+   a. configure email service, select javamail module?, sender account, select serialization service
+   b. package as a command-line jar
+   c. run in container
+
+research
+1. sparkjava (jetty)
